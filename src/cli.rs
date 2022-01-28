@@ -7,12 +7,21 @@ pub struct Cli {
     pub password: String,
 
     #[clap(short, long)]
-    pub salt: Option<String>,
+    pub salt: String,
 
-    #[clap(long, default_value = "32")]
+    #[clap(long, name = "LENGTH", default_value = "32")]
     pub hash_length: u32,
 
-    #[clap(short, long, arg_enum, default_value = "argon2d")]
+    #[clap(long, default_value = "4")]
+    pub parallel: u32,
+
+    #[clap(long, default_value = "3")]
+    pub passes: u32,
+
+    #[clap(long, default_value = "32")]
+    pub kilobytes: u32,
+
+    #[clap(short, long, arg_enum, name = "TYPE", default_value = "argon2d")]
     pub ty: Argon2Type,
 }
 
