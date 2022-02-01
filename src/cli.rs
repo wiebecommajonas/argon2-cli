@@ -25,7 +25,7 @@ pub struct Cli {
     pub ty: Argon2Type,
 
     #[clap(long)]
-    pub encoded: bool,
+    pub bytes: bool,
 }
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ArgEnum)]

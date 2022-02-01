@@ -32,7 +32,7 @@ fn main() {
         ),
     };
 
-    let hash_string = if app.encoded {
+    let hash_string = if !app.bytes {
         argon2.variable_hash_as_encoded_string(
             app.hash_length,
             app.password.as_bytes(),
