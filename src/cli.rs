@@ -23,6 +23,9 @@ pub struct Cli {
 
     #[clap(short, long, arg_enum, name = "TYPE", default_value = "argon2d")]
     pub ty: Argon2Type,
+
+    #[clap(long)]
+    pub encoded: bool,
 }
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ArgEnum)]
